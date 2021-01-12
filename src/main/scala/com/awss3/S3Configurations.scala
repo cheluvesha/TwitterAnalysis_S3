@@ -21,9 +21,9 @@ object S3Configurations {
   ): Boolean = {
     System.setProperty("com.amazonaws.services.s3.enableV4", "true")
     sparkContextObj.hadoopConfiguration
-      .set("fs.s3a.awsAccessKeyId", System.getenv("AWS_ACCESS_KEY_ID"))
+      .set("fs.s3a.awsAccessKeyId", awsAccessKeyID)
     sparkContextObj.hadoopConfiguration
-      .set("fs.s3a.awsSecretAccessKey", System.getenv("AWS_SECRET_ACCESS_KEY"))
+      .set("fs.s3a.awsSecretAccessKey", awsSecretAccessKey)
     sparkContextObj.hadoopConfiguration.set(
       "fs.s3a.impl",
       "org.apache.hadoop.fs.s3a.S3AFileSystem"

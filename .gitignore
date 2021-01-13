@@ -220,5 +220,6 @@ spark-warehouse/
 # For SBT
 .jvmopts
 
+env.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,scala,sbt,spark

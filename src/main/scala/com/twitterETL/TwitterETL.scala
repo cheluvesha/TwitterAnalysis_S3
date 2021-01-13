@@ -192,15 +192,15 @@ object TwitterETL {
   def main(args: Array[String]): Unit = {
     val broker = args(0)
     val topic = args(1)
-    val pathToSave = args(2)
     val kafkaDF = readDataFromKafka(broker, topic)
     val schema = extractSchemaFromTwitterData(
-      args(3)
+      args(2)
     )
     val tweetDF = processKafkaDataFrame(kafkaDF, schema)
     val removeWordsDF = removeUnwantedWords(tweetDF)
-    val awsAccessKey = args(4)
-    val awsSecretAccessKey = args(5)
+    val awsAccessKey = args(3)
+    val awsSecretAccessKey = args(4)
+    val pathToSave = args(5)
     val status = S3Configurations.connectToS3(
       sparkSession.sparkContext,
       awsAccessKey,

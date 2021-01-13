@@ -7,9 +7,9 @@ COPY DockerScript.sh .
 RUN chmod +x /app/DockerScript.sh
 
 ENV KAFKA_BROKER default
+ENV KAFKA_TOPIC default
 ENV AWS_ACCESS_KEY_ID default
 ENV AWS_SECRET_ACCESS_KEY default
-ENV TOPIC default
 ENV S3PATH default
 
 RUN sbt update

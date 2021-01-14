@@ -8,6 +8,7 @@ RUN chmod +x /app/DockerScript.sh
 
 ENV KAFKA_BROKER default
 ENV KAFKA_TOPIC default
+ENV TWEET_SAMPLE_FILE default
 ENV AWS_ACCESS_KEY_ID default
 ENV AWS_SECRET_ACCESS_KEY default
 ENV S3PATH default
